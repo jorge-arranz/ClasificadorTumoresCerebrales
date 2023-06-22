@@ -49,7 +49,6 @@ def controlador():
 
 def procesarImagen(request):
     global brain
-    print('Procesando Imagen')
     brain = BrainTumor()
 
     # Obtenemos el fichero que queremos analizar
@@ -59,14 +58,14 @@ def procesarImagen(request):
     f.save('./static/ImagenesBrain/'+secure_filename(f.filename))
     f.close
 
-    print('Clasificando... 2')
+    print('Clasificando...')
     session['nombreImagen']=secure_filename(f.filename)
     lock.acquire()
     session['brain']= brain.classifyTumor("./static/ImagenesBrain/"+secure_filename(f.filename))
     
     print('Ejecutando GradCAM...')
     name_path = ('./static/ImagenesBrain/GradCAM/'+secure_filename(f.filename))
-    imGC_plt = brain.img2Cam("./static/ImagenesBrain/"+secure_filename(f.filename), name_path)
+    imGC_plt = brain.img2Cam("./static/ImagenesBrain/Original/"+secure_filename(f.filename), name_path)
     
     session['gradCAM'] = secure_filename(f.filename)
     print('Imagen procesada')
