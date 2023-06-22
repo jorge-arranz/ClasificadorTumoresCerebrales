@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+  <html lang="es">
+
+    <head>
+      <meta charset="UTF-8"></meta>
+      <title>Diagnóstico de Tumores Cerebrales</title>
+      <link rel="stylesheet" type="text/css" href="../static/HojaEstilo/estilo.css"></link>
+      <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'></link>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+      <script language="JavaScript" type="text/javascript" src="../static/JavaScript/javascript.js"></script>
+    </head>
+
+    <body>
+      <div class="cabecera">
+        <div class="cabeceraTexto">
+          <h1>Diagnóstico de un Tumor Cerebral a partir de una Imagen de Resonancia Magnética</h1>
+        </div>
+        <div class="cabeceraImagen">
+          <img src="../static/imagenes/escudo_uva.png" alt="logo" width="200" height="200"></img>
+        </div>
+      </div>
+      <div class="contenedorFichero">
+        <div class="contenedorFicheroPrincipal">
+          <label for="fileBrowse" class="btnEstilo">Examinar</label>
+          <input type="file" name="myFile"  class="inputFile btnEstilo" title="" id="fileBrowse"/>
+          <p class="inputNameFile"><i class="far fa-file-image" style="font-size:24px;color:#0190af;margin-right:10px;"></i>
+            Nombre de la imagen
+          </p>
+        </div>
+        <div class="boxUpload">
+          <div id="drop_zone" ondragover="return false">
+            <p><i class="fa fa-download" style="font-size:48px;color:#0190af"></i>
+              Arrastrar imagen aquí
+            </p>
+          </div>
+        </div>
+        <p class="btnDiagnosticar btnEstilo btnRight"><i class="fa fa-search" style="font-size:24px;color:#0190af;margin-right:10px"></i> 
+          Diagnosticar 
+        </p>
+      </div>
+      <div id="ContenedorSecundario"></div>
+      <form id="btnResultado" action="/" method="post">
+        <input type="hidden" name="tipo" value="resultado"/>
+      </form>
+    </body>
+
+  </html>

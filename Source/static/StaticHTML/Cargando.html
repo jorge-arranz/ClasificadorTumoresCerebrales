@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+  <html lang="es">
+
+    <head>
+      <meta charset="UTF-8"></meta>
+      <title>Cargando</title>
+
+      <!-- JavaScript Externo -->
+  		<script language="JavaScript" type="text/javascript" src="../static/JavaScript/Loader/Loader.js"></script>
+
+      <!-- CSS Externo -->
+      <style>
+        .loader {
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #0190af; /*#3498db;*/
+            width: 120px;
+            height: 120px;
+            -webkit-animation: spin 2s linear infinite; /* Safari */
+            animation: spin 2s linear infinite;
+            margin: auto;
+        }
+
+        /* The Modal (background) */
+        .modal-loader {
+          display: none; /* Hidden by default */
+          position: fixed; /* Stay in place */
+          z-index: 12; /* Sit on top */
+          padding-top: 100px; /* Location of the box */
+          left: 0;
+          top: 0;
+          width: 100%; /* Full width */
+          height: 100%; /* Full height */
+          overflow: auto; /* Enable scroll if needed */
+          background-color: rgb( 192, 192, 192 ); /* Fallback color */
+        }
+
+        /* Modal Content */
+        .modal-loader-content {
+          margin: auto;
+          width: 700px;
+        }
+
+        /* Safari */
+        @-webkit-keyframes spin {
+          0% { -webkit-transform: rotate(0deg); }
+          100% { -webkit-transform: rotate(360deg); }
+        }
+
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+
+        .modal-loader-text{
+          font-family: 'Roboto', sans-serif;
+          font-weight: bold;
+          color: black;
+          font-size: 50px;
+          text-align: center;
+        }
+      </style>
+    </head>
+
+    <body>
+      <div class="modal-loader">
+        <div class="modal-loader-content">
+          <p class="modal-loader-text">Generando diagnostico... Espere</p>
+          <div class="loader"></div>
+        </div>
+      </div>
+    </body>
+
+</html>
