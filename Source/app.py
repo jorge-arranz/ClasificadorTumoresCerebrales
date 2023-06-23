@@ -55,13 +55,13 @@ def procesarImagen(request):
     f = request.files['miFichero']
     print('Procesando imagen...')
     # secure_filename te lo guarda con el mismo nombre de fichero.
-    f.save('./static/ImagenesBrain/'+secure_filename(f.filename))
+    f.save('./static/ImagenesBrain/Original/'+secure_filename(f.filename))
     f.close
 
     print('Clasificando...')
     session['nombreImagen']=secure_filename(f.filename)
     lock.acquire()
-    session['brain']= brain.classifyTumor("./static/ImagenesBrain/"+secure_filename(f.filename))
+    session['brain']= brain.classifyTumor("./static/ImagenesBrain/Original/"+secure_filename(f.filename))
     
     print('Ejecutando GradCAM...')
     name_path = ('./static/ImagenesBrain/GradCAM/'+secure_filename(f.filename))
